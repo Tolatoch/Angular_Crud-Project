@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *");  //two of these is very important
+header("Access-Control-Allow-Origin: *"); 
 header("Content-Type: application/json; charset=UTF-8");
 
 $servername = "localhost";
@@ -8,20 +8,21 @@ $password = "";
 $dbname = "ajbo";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = " INSERT INTO `products`(`ProductID`, `ProductName`, `SupplierID`, `CategoryID`, `Unit`, `Price`)
-VALUES ('9',' herbal teas','01','09','hot drinks','20.00')";
 
-if (mysqli_query($conn, $sql)) {
-  echo "Crazy";
+$sql = " INSERT INTO `products`(`ProductID` , `ProductName`, `SupplierID`, `CategoryID`, `Unit`, `Price`)
+VALUES ('14',' Milk','01','09','hot drinks','20.00')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record inserted successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  echo "Error deleting record: " . $conn->error;
 }
 
-mysqli_close($conn);
-?>''
+$conn->close();
+?>
