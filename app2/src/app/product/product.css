@@ -1,0 +1,17 @@
+.search {
+
+    margin-left: 30rem;
+    margin-top: 20px;
+}
+thead {
+    background-color: skyblue;
+}
+table, th, td {
+    text-align: center;
+    border: 1px solid green;
+    padding: 20px;
+}
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

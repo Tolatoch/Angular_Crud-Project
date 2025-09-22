@@ -1,0 +1,46 @@
+ <section class="search" >
+    <form>
+      <input type="text" placeholder="Filter by city">
+      <button class="primary" type="button">Search</button>
+    </form>
+  </section>
+<div class="container">
+    <div class="form-group">
+        <button class="btn btn-info ">Products</button>
+        <button class="btn btn-primary" style="margin-left:10px;">View Products</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="form-group">
+      <table>
+        <thead>
+        <tr>
+            <td>ProductID</td>
+            <td>ProductName</td>
+            <td>SupplierID</td>
+            <td>CategoryID</td>
+            <td>Unit</td>
+            <td>Price</td>
+    </tr>
+    </thead>
+    <tbody>
+@for (i of data; track i.ProductID){
+                <tr>
+                        <td>{{i.ProductID}}</td>
+                        <td>{{i.ProductName}}</td>
+                        <td>{{i.SupplierID}}</td>
+                        <td>{{i.CategoryID}}</td>
+                        <td>{{i.Unit}}</td>
+                        <td>{{i.Price}}</td>
+                </tr>
+
+}
+       </tbody>
+       
+
+</table>
+    </div>
+</div>
+
+
