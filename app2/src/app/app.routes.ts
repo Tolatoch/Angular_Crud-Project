@@ -6,5 +6,5 @@ export const routes: Routes = [
         path: '',
         title: 'App Home Page',
         component: Product,
-    }
+    },
 ];
